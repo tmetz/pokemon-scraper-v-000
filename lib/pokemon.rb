@@ -16,12 +16,12 @@ class Pokemon
   end
 
   def self.find(id, db)
-    #name = db.execute("SELECT name FROM pokemon WHERE id=?;", id)
-    #type = db.execute("SELECT type FROM pokemon WHERE id=?;", id)
-    #hp = db.execute("SELECT hp FROM pokemon WHERE id=?;", id)
-    args = db.execute("SELECT * FROM pokemon WHERE id=?;", id)
-    #new_pok = Pokemon.new(id: id, name: name[0][0], type: type[0][0], db: db, hp: hp[0][0])
-    new_pok = Pokemon.new(args)
+    name = db.execute("SELECT name FROM pokemon WHERE id=?;", id)
+    type = db.execute("SELECT type FROM pokemon WHERE id=?;", id)
+    hp = db.execute("SELECT hp FROM pokemon WHERE id=?;", id)
+    #args = db.execute("SELECT * FROM pokemon WHERE id=?;", id)
+    new_pok = Pokemon.new(id: id, name: name[0][0], type: type[0][0], db: db, hp: hp[0][0])
+    #new_pok = Pokemon.new(args)
     new_pok
   end
 
