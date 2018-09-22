@@ -29,6 +29,9 @@ describe "Pokemon" do
   end
 
   describe ".find" do
+    before do
+      @sql_runner.execute_create_hp_column
+    end
     it 'finds a pokemon from the database by their id number and returns a new Pokemon object' do
       # The find method creates a new Pokemon after selecting their row from the database by their id number.
       Pokemon.save("Pikachu", "electric", @db)
